@@ -4,19 +4,17 @@ A kernel module that returns the number of processes in using /proc/count.
 
 ## Building
 
-Explain how to build your kernel module
+In the lab0 directory, type ```make```.
+The resulting proc_count.ko file is the kernel module.
 
 ## Running
 
-Explain how to run your kernel module and what to expect
+To run the module, type ```sudo insmod proc_count.ko```. Now, if we run ```lsmod | grep proc_count``` we can see the module is running. To list the number of processes, type ```cat /proc/count```. This should write an integer of how many processes there are followed by a newline.
 
 ## Cleaning Up
 
-Explain how to remove your kernel module and clean up the code
+To remove the module, type ```sudo rmmod proc_count```.
 
 ## Testing
 
-Report which kernel release version you tested your module on
-(hint: use `uname`, check for options with `man uname`).
-It should match release numbers as seen on https://www.kernel.org/.
-
+Tested on kernel verison 5.14.8
