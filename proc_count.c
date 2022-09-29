@@ -4,12 +4,13 @@
 #include <linux/seq_file.h>
 #include <linux/sched.h>
 
+static struct proc_dir_entry *ent;
 static int proc_count_show(struct seq_file *s, void *v);
 
 static int __init proc_count_init(void)
 {
 	pr_info("proc_count: init\n");
-	proc_create_single("proc_count", 0, NULL, &proc_count_show);
+	ent = proc_create_single("proc_count", 0, NULL, &proc_count_show);
 	return 0;
 }
 
@@ -22,6 +23,7 @@ static int proc_count_show(struct seq_file *s, void *v)
 static void __exit proc_count_exit(void)
 {
 	pr_info("proc_count: exit\n");
+	proc_remove(ent);
 }
 
 module_init(proc_count_init);
