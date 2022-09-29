@@ -11,7 +11,7 @@ static int __init proc_count_init(void)
 	return 0;
 }
 
-static void proc_count_show(struct seq_file *s, void *v)
+static int proc_count_show(struct seq_file *s, void *v)
 {
 	seq_printf(s, "Hello");
     return 0;
