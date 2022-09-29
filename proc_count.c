@@ -21,7 +21,7 @@ static int proc_count_show(struct seq_file *s, void *v)
 	for_each_process(t) {
 		count++;
 	}
-	seq_printf(s, "%d", count);
+	seq_printf(s, "%d\n", count);
     return 0;
 }
 
