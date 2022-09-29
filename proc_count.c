@@ -16,7 +16,13 @@ static int __init proc_count_init(void)
 
 static int proc_count_show(struct seq_file *s, void *v)
 {
-	seq_printf(s, "Hello");
+	// seq_printf(s, "Calculating...");
+	struct task_struct *t;
+	int count = 0;
+	for_each_process(t) {
+		count++;
+	}
+	seq_printf(s, "%d", count);
     return 0;
 }
 
