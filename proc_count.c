@@ -4,6 +4,8 @@
 #include <linux/seq_file.h>
 #include <linux/sched.h>
 
+static int proc_count_show(struct seq_file *s, void *v);
+
 static int __init proc_count_init(void)
 {
 	pr_info("proc_count: init\n");
