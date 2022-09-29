@@ -7,8 +7,14 @@
 static int __init proc_count_init(void)
 {
 	pr_info("proc_count: init\n");
-	// proc_create("proc_count", 0, NULL, &proc_count_show);
+	proc_create_single("proc_count", 0, NULL, &proc_count_show);
 	return 0;
+}
+
+static void proc_count_show(struct seq_file *s, void *v)
+{
+	seq_printf(s, "Hello");
+    return 0;
 }
 
 static void __exit proc_count_exit(void)
