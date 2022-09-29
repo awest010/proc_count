@@ -1,6 +1,6 @@
 # A Kernel Seedling
 
-One sentence description
+A kernel module that returns the number of processes in using /proc/count.
 
 ## Building
 
