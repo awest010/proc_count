@@ -18,3 +18,5 @@ To remove the module, type ```sudo rmmod proc_count```.
 ## Testing
 
 Tested on kernel verison 5.14.8
+
+Testing scripts: the included test_lab0.py script was used to ensure the module could correctly build and to ensure it exhibited the correct behavior. In addition, the number of active proccesses were counted and compared to the returned integer. The number of active programs were close enough to be accurate.e
